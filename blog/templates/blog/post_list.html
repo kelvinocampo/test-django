@@ -1,0 +1,35 @@
+{% load static %} <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lista de Posts | {{ titulo_pagina }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <h1>{% block encabezado %}Últimas Entradas del Blog{% endblock encabezado %}</h1>
+
+    {% if lista_posts %}
+    {% for post in lista_posts %}
+    <article>
+        <h2>
+            <a href="{% url 'blog:post_detail' slug=post.slug %}">{{ post.titulo }}</a>
+        </h2>
+        
+        <p class="post-metadata">
+            Publicado por <strong>{{ post.autor.username }}</strong> el {{ post.fecha_publicacion|date:"F j, Y" }}
+        </p>
+
+        <p>
+            <a href="{% url 'blog:post_detail' slug=post.slug %}">Leer más →</a>
+        </p>
+
+    </article>
+    {% endfor %}
+    {% else %}
+    <p>Aún no hay posts publicados.</p>
+    {% endif %}
+
+</body>
+
+</html>

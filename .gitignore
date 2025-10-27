@@ -1,0 +1,56 @@
+# ==========================================================
+# Archivos y Directorios Generados Automáticamente (Django)
+# ==========================================================
+
+# Archivo de base de datos SQLite (¡NUNCA debe subirse!)
+db.sqlite3
+*.sqlite3
+
+# Archivos de caché para Python
+__pycache__/
+*.pyc
+
+# Archivos de Migración (Solo archivos de migración específicos de la app)
+# Mantén el directorio 'migrations/', pero ignora los archivos de test.
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# Archivos estáticos recolectados (STATIC_ROOT)
+# Se generan con 'python manage.py collectstatic'
+/staticfiles/
+
+# Archivos de Medios de Usuario (MEDIA_ROOT)
+# Contenido subido por los usuarios (fotos, archivos)
+/media/
+
+# Archivos de depuración y logs
+*.log
+*.pot
+*.mo
+*.prof
+*.pid
+*.sess
+*.svn
+*.seed
+
+# ==========================================================
+# Entorno de Desarrollo y Seguridad
+# ==========================================================
+
+# Entorno virtual de Python (se recrea fácilmente)
+venv/
+env/
+.venv/
+.tox/
+
+# Archivos del editor (ej: VS Code, Sublime)
+.vscode/
+*.swp
+*.bak
+*~
+
+# Claves de Seguridad y Configuraciones Locales
+# Si usas una clave SECRET_KEY o credenciales en un archivo local:
+# (Asegúrate de NO tener tu SECRET_KEY directamente en settings.py si lo subes)
+local_settings.py
+.env

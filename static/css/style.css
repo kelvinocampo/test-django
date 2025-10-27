@@ -1,0 +1,123 @@
+/* static/css/style.css */
+
+/* Estilos Generales para el Cuerpo */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7; /* Fondo gris claro */
+    color: #333;
+    padding: 20px;
+    margin: 0 auto; /* Centrar el contenido */
+    max-width: 800px; /* Limitar el ancho para legibilidad */
+}
+
+/* Estilos para el Título Principal */
+h1 {
+    color: #2c3e50; /* Color oscuro para el título */
+    border-bottom: 3px solid #3498db; /* Línea separadora azul */
+    padding-bottom: 15px;
+    margin-top: 0;
+    font-size: 2.2em;
+}
+
+/* Metadata (Autor y Fecha) */
+.post-meta {
+    font-size: 0.9em;
+    color: #7f8c8d; /* Gris para la meta data */
+    margin-bottom: 25px;
+    display: block; /* Asegura que el párrafo ocupe su propia línea */
+}
+
+.post-meta strong {
+    color: #333; /* Resaltar el nombre de usuario */
+}
+
+/* Contenido del Post */
+.post-content {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco para el contenido */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+/* Enlaces de Navegación */
+.back-link {
+    display: block;
+    margin-top: 40px;
+    font-size: 1.1em;
+}
+
+.back-link a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+/* Encabezado */
+h1 {
+    color: #004d40; /* Tono verde oscuro */
+    border-bottom: 2px solid #004d40;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+/* Estilo de Artículo (Cada Post en la Lista) */
+article {
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #e0e0e0; /* Borde sutil */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto Hover */
+article:hover {
+    transform: translateY(-5px); /* Pequeño desplazamiento al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del Post */
+article h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+/* Enlaces del Título */
+article h2 a {
+    color: #00796b; /* Tono verde brillante */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+article h2 a:hover {
+    color: #004d40; /* Se oscurece al pasar el ratón */
+    text-decoration: underline;
+}
+
+/* Contenido de Soporte (Metadata, fragmento) */
+.post-metadata {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Texto de No Publicaciones */
+body > p {
+    text-align: center;
+    color: #a0a0a0;
+    font-style: italic;
+    padding: 30px;
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+}
