@@ -83,13 +83,13 @@ h1 {
 
 /* Estilo para el enlace de Acción Principal (Nuevo Post) */
 .new-post-link {
-    background-color: #3498db; /* Mantenemos el azul como color de ACCIÓN/CREATE */
+    background-color: #004d40; /* Mantenemos el azul como color de ACCIÓN/CREATE */
     color: white !important;
     font-weight: bold;
 }
 
 .new-post-link:hover {
-    background-color: #2980b9;
+    background-color: #007460 !important;
 }
 
 
