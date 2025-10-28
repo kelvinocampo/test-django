@@ -1,240 +1,54 @@
-/* static/css/style.css */
+/* static/css/style.css - Refactorizado para Coherencia */
 
-/* Estilos Generales para el Cuerpo */
+/* ========================================= */
+/* 1. BASE Y LAYOUT */
+/* ========================================= */
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.6;
     background-color: #f7f7f7; /* Fondo gris claro */
     color: #333;
-    padding: 20px;
+    margin: 0; /* Quitamos el margin auto aquí */
+    padding: 0;
+}
+
+/* Contenedor principal para centrar el contenido (debe ir en base.html en el <main>) */
+.container {
     margin: 0 auto; /* Centrar el contenido */
-    max-width: 800px; /* Limitar el ancho para legibilidad */
-}
-
-/* Estilos para el Título Principal */
-h1 {
-    color: #2c3e50; /* Color oscuro para el título */
-    border-bottom: 3px solid #3498db; /* Línea separadora azul */
-    padding-bottom: 15px;
-    margin-top: 0;
-    font-size: 2.2em;
-}
-
-/* Metadata (Autor y Fecha) */
-.post-meta {
-    font-size: 0.9em;
-    color: #7f8c8d; /* Gris para la meta data */
-    margin-bottom: 25px;
-    display: block; /* Asegura que el párrafo ocupe su propia línea */
-}
-
-.post-meta strong {
-    color: #333; /* Resaltar el nombre de usuario */
-}
-
-/* Contenido del Post */
-.post-content {
-    margin-top: 30px;
+    max-width: 850px; /* Ancho máximo consistente (ajustado de 800px) */
     padding: 20px;
-    background-color: #ffffff; /* Fondo blanco para el contenido */
-    border: 1px solid #ddd;
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra suave */
 }
 
-/* Enlaces de Navegación */
-.back-link {
-    display: block;
-    margin-top: 40px;
-    font-size: 1.1em;
-}
-
-.back-link a {
-    color: #3498db;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.back-link a:hover {
-    text-decoration: underline;
-}
-
-/* Encabezado */
+/* Estilos de Título Principal (Unificado con la paleta verde/turquesa) */
 h1 {
     color: #004d40; /* Tono verde oscuro */
     border-bottom: 2px solid #004d40;
     padding-bottom: 10px;
-    margin-bottom: 30px;
-    font-size: 2.5em;
-    text-align: center;
-}
-
-/* Estilo de Artículo (Cada Post en la Lista) */
-article {
-    background-color: #ffffff; /* Fondo blanco */
-    border: 1px solid #e0e0e0; /* Borde sutil */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 25px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra suave */
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Efecto Hover */
-article:hover {
-    transform: translateY(-5px); /* Pequeño desplazamiento al pasar el ratón */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Título del Post */
-article h2 {
     margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.8em;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Tamaño consistente */
+    text-align: center; /* Centrado consistente */
 }
 
-/* Enlaces del Título */
-article h2 a {
-    color: #00796b; /* Tono verde brillante */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-article h2 a:hover {
-    color: #004d40; /* Se oscurece al pasar el ratón */
-    text-decoration: underline;
-}
-
-/* Contenido de Soporte (Metadata, fragmento) */
-.post-metadata {
-    font-size: 0.9em;
-    color: #777;
-    margin-bottom: 15px;
-}
-
-/* Texto de No Publicaciones */
-body > p {
-    text-align: center;
-    color: #a0a0a0;
-    font-style: italic;
-    padding: 30px;
-    border: 1px dashed #ccc;
-    border-radius: 5px;
-}
-
-/* Contenedor principal del formulario */
-form {
-    /* Usamos un contenedor similar a .post-content */
-    padding: 30px;
-    background-color: #ffffff; /* Fondo blanco */
-    border: 1px solid #ddd;
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada */
-    margin-top: 30px;
-}
-
-/* Estilo para cada fila (párrafo) del formulario generado por {{ form.as_p }} */
-form p {
-    margin-bottom: 20px;
-}
-
-/* Estilo para las etiquetas (labels) */
-form label {
-    display: block; /* Ocupa toda la línea */
-    font-weight: bold;
-    color: #2c3e50; /* Color oscuro */
-    margin-bottom: 8px;
-    font-size: 1.1em;
-}
-
-/* Estilo para los campos de entrada (input y textarea) */
-input[type="text"], 
-textarea, 
-select {
-    width: 100%; /* Ocupa todo el ancho disponible */
-    padding: 12px;
-    border: 1px solid #bdc3c7; /* Borde gris sutil */
-    border-radius: 4px;
-    box-sizing: border-box; /* Incluye padding y border en el ancho total */
-    font-size: 1em;
-    transition: border-color 0.3s ease-in-out;
-}
-
-/* Efecto al enfocar los campos */
-input[type="text"]:focus, 
-textarea:focus, 
-select:focus {
-    border-color: #3498db; /* Borde azul brillante al enfocar */
-    outline: none; /* Eliminar el contorno por defecto del navegador */
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Sombra suave azul */
-}
-
-/* Campo de contenido (textarea) */
-textarea {
-    resize: vertical; /* Permitir redimensionar solo verticalmente */
-    min-height: 200px; /* Altura mínima para el contenido del post */
-}
-
-/* Estilo para el botón de envío (Submit Button) */
-button[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    background-color: #00796b; /* Tono verde brillante (de tu estilo de enlace) */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.2em;
-    font-weight: bold;
-    transition: background-color 0.3s ease-in-out, transform 0.1s;
-}
-
-/* Efecto Hover y Active del botón */
-button[type="submit"]:hover {
-    background-color: #004d40; /* Tono verde más oscuro al pasar el ratón */
-}
-
-button[type="submit"]:active {
-    transform: translateY(1px); /* Efecto de "clic" */
-}
-
-/* Estilo para el enlace de "Cancelar y Volver" */
-.cancel-link {
-    margin-top: 25px;
-    text-align: center;
-}
-
-.cancel-link a {
-    color: #95a5a6; /* Gris sutil */
-    text-decoration: none;
-    font-weight: normal;
-    font-size: 0.9em;
-    transition: color 0.3s;
-}
-
-.cancel-link a:hover {
-    color: #7f8c8d;
-    text-decoration: underline;
-}
-
-/* Estilos para el Header y Navegación */
+/* ========================================= */
+/* 2. HEADER Y NAVEGACIÓN */
+/* ========================================= */
 .main-header {
-    background-color: #ffffff; /* Fondo blanco */
-    border-bottom: 1px solid #e0e0e0; /* Separador sutil */
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    position: sticky; /* Fija el header en la parte superior */
+    position: sticky;
     top: 0;
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    z-index: 1000;
     padding: 10px 0;
 }
 
 .main-header nav {
-    max-width: 850px;
+    max-width: 850px; /* Usar el mismo max-width que el .container */
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between; /* Espacia el logo de los enlaces */
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -242,7 +56,7 @@ button[type="submit"]:active {
 .logo {
     font-size: 1.8em;
     font-weight: bold;
-    color: #00796b; /* Tono verde brillante */
+    color: #00796b; /* Tono verde brillante como color de marca */
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -253,7 +67,7 @@ button[type="submit"]:active {
 
 /* Contenedor de enlaces de usuario */
 .user-links a {
-    color: #34495e; /* Gris oscuro para enlaces normales */
+    color: #34495e;
     text-decoration: none;
     margin-left: 20px;
     padding: 8px 12px;
@@ -267,15 +81,208 @@ button[type="submit"]:active {
     color: #2c3e50;
 }
 
-/* Estilo específico para el enlace 'Nuevo Post' */
+/* Estilo para el enlace de Acción Principal (Nuevo Post) */
 .new-post-link {
-    background-color: #3498db; /* Azul */
+    background-color: #3498db; /* Mantenemos el azul como color de ACCIÓN/CREATE */
     color: white !important;
     font-weight: bold;
 }
 
 .new-post-link:hover {
-    background-color: #2980b9; /* Azul más oscuro al pasar el ratón */
+    background-color: #2980b9;
+}
+
+
+/* ========================================= */
+/* 3. POSTS Y ARTÍCULOS (LISTA Y CONTENIDO) */
+/* ========================================= */
+article {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título de los Posts en la lista */
+article h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+/* Enlaces del Título (Color de Marca) */
+article h2 a {
+    color: #00796b; /* Tono verde brillante (Coherente con el logo) */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+article h2 a:hover {
+    color: #004d40;
+    text-decoration: underline;
+}
+
+/* Metadata de Artículos (post-meta y post-metadata) */
+.post-metadata, .post-meta {
+    font-size: 0.9em;
+    color: #7f8c8d; /* Gris para la meta data */
+    margin-bottom: 15px; /* Consistencia */
+    display: block;
+}
+
+.post-meta strong {
+    color: #333;
+}
+
+/* Estilo para el Contenido del Post Individual (o contenedores especiales) */
+.post-content {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Texto de No Publicaciones */
+body > p {
+    text-align: center;
+    color: #a0a0a0;
+    font-style: italic;
+    padding: 30px;
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+}
+
+/* ========================================= */
+/* 4. FORMULARIOS (Registro, Login, Edición) */
+/* ========================================= */
+
+form {
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    margin: 30px;
+}
+
+form p {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+input[type="text"], 
+input[type="email"],
+input[type="password"],
+textarea, 
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Efecto al enfocar los campos (Color de marca principal) */
+input[type="text"]:focus, 
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus, 
+select:focus {
+    border-color: #00796b; /* Usamos el verde/turquesa de la marca */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 121, 107, 0.5); /* Sombra suave turquesa */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 200px;
+}
+
+/* Botón de envío (Principal) */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #00796b; /* Color de marca */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.1s;
+}
+
+button[type="submit"]:hover {
+    background-color: #004d40;
+}
+
+button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* ========================================= */
+/* 5. UTILITIES Y ENLACES SECUNDARIOS */
+/* ========================================= */
+
+/* Enlace de "Cancelar y Volver" y Enlaces Secundarios */
+/* Sección 5: UTILITIES Y ENLACES SECUNDARIOS */
+
+/* Estilo para el enlace de "Cancelar y Volver" y Enlaces Secundarios */
+.cancel-link {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.cancel-link a {
+    color: #00796b; /* Color de marca (Turquesa) para coherencia */
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+.cancel-link a:hover {
+    color: #004d40;
+    text-decoration: underline;
+}
+
+/* El estilo .back-link utiliza el mismo estilo de a */
+.back-link {
+    display: block;
+    margin-top: 40px;
+    font-size: 1.1em;
+}
+
+.back-link a {
+    color: #00796b; /* Coherencia con .cancel-link a */
+    text-decoration: none;
+    font-weight: bold;
+    /* Usar font-weight: bold para diferenciarlo de los enlaces cancel-link */
+}
+
+.back-link a:hover {
+    color: #004d40;
+    text-decoration: underline;
 }
 
 /* Estilos para el Footer */
@@ -284,6 +291,6 @@ button[type="submit"]:active {
     padding: 20px;
     margin-top: 50px;
     border-top: 1px solid #e0e0e0;
-    color: #7f8c8d; /* Gris para texto secundario */
+    color: #7f8c8d;
     font-size: 0.9em;
 }
