@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ post.titulo }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <h1>👤 Perfil de Usuario: {{ perfil_usuario.username }}</h1>
+
+    <div class="post-content">
+        <h2>Información Básica</h2>
+        <p><strong>Nombre de Usuario:</strong> {{ perfil_usuario.username }}</p>
+
+        {% if perfil_usuario.email %}
+        <p><strong>Email:</strong> {{ perfil_usuario.email }}</p>
+        {% endif %}
+
+        <p><strong>Miembro desde:</strong> {{ perfil_usuario.date_joined|date:"d M, Y" }}</p>
+
+        {% if user.is_authenticated and user.id == perfil_usuario.id %}
+        <div style="margin-top: 30px;">
+            <a href="{% url 'user_update' username=perfil_usuario.username %}" class="btn-primary">
+                Editar Perfil
+            </a>
+        </div>
+        {% endif %}
+    </div>
+
+    <p class="cancel-link"><a href="{% url 'blog:post_list' %}">Volver al Blog</a></p>
+
+</body>
+
+</html>

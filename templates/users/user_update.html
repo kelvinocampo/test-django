@@ -9,19 +9,20 @@
 
 <body>
 
-    <h1>📝 Crear Nuevo Post</h1>
+    <h1>🛠️ Editar Perfil de {{ user.username }}</h1>
 
     <form method="post">
-
         {% csrf_token %}
 
         {{ form.as_p }}
 
-        <button type="submit">Publicar Post</button>
+        <button type="submit">Guardar Cambios</button>
     </form>
 
     <p class="cancel-link">
-        <a href="{% url 'blog:post_list' %}">Cancelar y Volver a la Lista de Posts</a>
+        <a href="{% url 'user_detail' username=user.username %}">
+            Cancelar y Volver al Perfil
+        </a>
     </p>
 
 </body>
