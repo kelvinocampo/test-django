@@ -15,3 +15,16 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titulo
+
+class User(models.Model):
+    creador = models.ForeignKey(User, on_delete=models.CASCADE) 
+    nombre = models.CharField(max_length=200) 
+    correo = models.EmailField() 
+    fecha_creacion = models.DateTimeField(default=timezone.now) 
+    slug = models.SlugField(unique=True, max_length=200) 
+
+    class Meta:
+        ordering = ['-fecha_creacion'] 
+
+    def __str__(self):
+        return self.nombre
