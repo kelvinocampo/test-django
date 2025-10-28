@@ -1,30 +1,23 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-    <title>{{ post.titulo }}</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
+{% block title %}Editar Perfil{% endblock title %}
 
-<body>
+{% block content %}
 
-    <h1>🛠️ Editar Perfil de {{ user.username }}</h1>
+<h1>🛠️ Editar Perfil de {{ user.username }}</h1>
 
-    <form method="post">
-        {% csrf_token %}
+<form method="post">
+    {% csrf_token %}
 
-        {{ form.as_p }}
+    {{ form.as_p }}
 
-        <button type="submit">Guardar Cambios</button>
-    </form>
+    <button type="submit">Guardar Cambios</button>
+</form>
 
-    <p class="cancel-link">
-        <a href="{% url 'user_detail' username=user.username %}">
-            Cancelar y Volver al Perfil
-        </a>
-    </p>
+<p class="cancel-link">
+    <a href="{% url 'user_detail' username=user.username %}">
+        Cancelar y Volver al Perfil
+    </a>
+</p>
 
-</body>
-
-</html>
+{% endblock content %}

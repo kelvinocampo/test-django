@@ -1,35 +1,30 @@
-{% load static %} <!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-    <title>Lista de Posts | {{ titulo_pagina }}</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
+{% block title %}Lista de Posts | {{ titulo_pagina }}{% endblock title %}
 
-<body>
-    <h1>{% block encabezado %}Últimas Entradas del Blog{% endblock encabezado %}</h1>
+{% block content %}
 
-    {% if lista_posts %}
-    {% for post in lista_posts %}
-    <article>
-        <h2>
-            <a href="{% url 'blog:post_detail' slug=post.slug %}">{{ post.titulo }}</a>
-        </h2>
-        
-        <p class="post-metadata">
-            Publicado por <strong>{{ post.autor.username }}</strong> el {{ post.fecha_publicacion|date:"F j, Y" }}
-        </p>
+<h1>{% block encabezado %}Últimas Entradas del Blog{% endblock encabezado %}</h1>
 
-        <p class="back-link">
-            <a href="{% url 'blog:post_detail' slug=post.slug %}">Leer más →</a>
-        </p>
+{% if lista_posts %}
+{% for post in lista_posts %}
+<article>
+    <h2>
+        <a href="{% url 'blog:post_detail' slug=post.slug %}">{{ post.titulo }}</a>
+    </h2>
 
-    </article>
-    {% endfor %}
-    {% else %}
-    <p>Aún no hay posts publicados.</p>
-    {% endif %}
+    <p class="post-metadata">
+        Publicado por <strong>{{ post.autor.username }}</strong> el {{ post.fecha_publicacion|date:"F j, Y" }}
+    </p>
 
-</body>
+    <p class="back-link">
+        <a href="{% url 'blog:post_detail' slug=post.slug %}">Leer más →</a>
+    </p>
 
-</html>
+</article>
+{% endfor %}
+{% else %}
+<p>Aún no hay posts publicados.</p>
+{% endif %}
+
+{% endblock content %}

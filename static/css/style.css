@@ -217,3 +217,73 @@ button[type="submit"]:active {
     color: #7f8c8d;
     text-decoration: underline;
 }
+
+/* Estilos para el Header y Navegación */
+.main-header {
+    background-color: #ffffff; /* Fondo blanco */
+    border-bottom: 1px solid #e0e0e0; /* Separador sutil */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky; /* Fija el header en la parte superior */
+    top: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    padding: 10px 0;
+}
+
+.main-header nav {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between; /* Espacia el logo de los enlaces */
+    align-items: center;
+}
+
+/* Estilo para el logo/nombre del sitio */
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #00796b; /* Tono verde brillante */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.logo:hover {
+    color: #004d40;
+}
+
+/* Contenedor de enlaces de usuario */
+.user-links a {
+    color: #34495e; /* Gris oscuro para enlaces normales */
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 0.95em;
+}
+
+.user-links a:hover {
+    background-color: #f0f0f0;
+    color: #2c3e50;
+}
+
+/* Estilo específico para el enlace 'Nuevo Post' */
+.new-post-link {
+    background-color: #3498db; /* Azul */
+    color: white !important;
+    font-weight: bold;
+}
+
+.new-post-link:hover {
+    background-color: #2980b9; /* Azul más oscuro al pasar el ratón */
+}
+
+/* Estilos para el Footer */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 1px solid #e0e0e0;
+    color: #7f8c8d; /* Gris para texto secundario */
+    font-size: 0.9em;
+}

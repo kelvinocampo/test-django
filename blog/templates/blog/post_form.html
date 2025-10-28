@@ -1,29 +1,22 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-    <title>{{ post.titulo }}</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
+{% block title %}{{ post.titulo }}{% endblock title %}
 
-<body>
+{% block content %}
 
-    <h1>📝 Crear Nuevo Post</h1>
+<h1>📝 Crear Nuevo Post</h1>
 
-    <form method="post">
+<form method="post">
 
-        {% csrf_token %}
+    {% csrf_token %}
 
-        {{ form.as_p }}
+    {{ form.as_p }}
 
-        <button type="submit">Publicar Post</button>
-    </form>
+    <button type="submit">Publicar Post</button>
+</form>
 
-    <p class="cancel-link">
-        <a href="{% url 'blog:post_list' %}">Cancelar y Volver a la Lista de Posts</a>
-    </p>
+<p class="cancel-link">
+    <a href="{% url 'blog:post_list' %}">Cancelar y Volver a la Lista de Posts</a>
+</p>
 
-</body>
-
-</html>
+{% endblock content %}

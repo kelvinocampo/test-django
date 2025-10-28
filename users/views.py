@@ -8,7 +8,12 @@ from django.views.generic.edit import UpdateView
 from django.contrib.auth.mixins import UserPassesTestMixin
 # Asegúrate de importar tu formulario personalizado:
 from .forms import CustomUserCreationForm 
+from django.contrib.auth.views import LogoutView
 
+
+class CustomLogoutView(LogoutView):
+    def dispatch(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
 
 class RegisterView(CreateView):
     # CORRECCIÓN CLAVE: Usar form_class en lugar de model y fields
