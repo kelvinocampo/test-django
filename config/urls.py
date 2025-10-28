@@ -12,4 +12,5 @@ urlpatterns = [
     path('profile/<str:username>/edit/', UserUpdateView.as_view(), name='user_update'),
     path('logout/', CustomLogoutView.as_view(), name='logout'),
     path('', include('django.contrib.auth.urls')),
+    path('api/', include('blog.api.urls')),
 ]
