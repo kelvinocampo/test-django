@@ -20,7 +20,7 @@
             Publicado por <strong>{{ post.autor.username }}</strong> el {{ post.fecha_publicacion|date:"F j, Y" }}
         </p>
 
-        <p>
+        <p class="back-link">
             <a href="{% url 'blog:post_detail' slug=post.slug %}">Leer más →</a>
         </p>
 
